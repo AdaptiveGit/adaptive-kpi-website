@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="scripts/papaparse.min.js"></script>
+    <title>Read CSV</title>
+</head>
+
+<body>
+    <div>
+        <h2>Exchange</h2>
+        <input type="file" id="upload-exchange-csv" accept=".csv">
+        <button id="btn-upload-exchange-csv">Read Exchange CSV</button>
+    </div>
+    <div>
+        <h2>Sales</h2>
+        <input type="file" id="upload-sales-csv" accept=".csv">
+        <button id="btn-upload-sales-csv" disabled>Read Sales CSV</button>
+    </div>
+    <form action="" id="date">
+        Start Date: <input type="date" id="start-date">
+        Stop Date: <input type="date" id="stop-date">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Total Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+    <table id="tbl-data"></table>
+
+    <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+
+</html>
