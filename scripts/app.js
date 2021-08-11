@@ -16,25 +16,27 @@ let getStopDate = document.getElementById("stop-date").addEventListener("input",
 function createTable() {
     return new Promise((resolve) => {
         let newElement;
+        let tableElements = document.querySelector("tbody");
+        while (tableElements.firstChild) {
+            tableElements.removeChild(tableElements.firstChild);
+        }
         for (let i = 0; i < salesPersonStats.length; i++) {
+
             newElement = document.createElement("tr");
-            document.body.table.tbody.appendChild(newElement);
+            newElement.setAttribute("id", `table-row-${i}`);
+            document.querySelector("tbody").append(newElement);
 
             newElement = document.createElement("td");
-            newElement.innerHTML = salesPersonStats[i].name;
-            document.body.table.getElementsByTagName("tbody")[i].appendChild(newElement);
+            newElement.innerText = salesPersonStats[i].name;
+            document.querySelector(`#table-row-${i}`).append(newElement);
 
             newElement = document.createElement("td");
-            newElement.innerHTML = salesPersonStats[i].totalSales;
-            document.body.table.getElementsByTagName("tbody")[i].appendChild(newElement);
+            newElement.innerText = salesPersonStats[i].totalSales;
+            document.querySelector(`#table-row-${i}`).append(newElement);
 
             resolve("complete");
         }
     })
-
-
-
-
 }
 
 
