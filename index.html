@@ -5,43 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="scripts/papaparse.min.js"></script>
+    <script type="text/javascript" src="modules/papaparse.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&family=Montserrat:wght@200;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Read CSV</title>
 </head>
 
 <body>
-    <div>
-        <h2>Exchange</h2>
-        <input type="file" id="upload-exchange-csv" accept=".csv">
-        <button id="btn-upload-exchange-csv">Read Exchange CSV</button>
-    </div>
-    <div>
-        <h2>Sales</h2>
-        <input type="file" id="upload-sales-csv" accept=".csv">
-        <button id="btn-upload-sales-csv" disabled>Read Sales CSV</button>
-    </div>
-    <form action="" id="date">
-        Start Date: <input type="date" id="start-date">
-        Stop Date: <input type="date" id="stop-date">
-    </form>
-    <table>
+    <table hidden class="table-hidden">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Total Sales</th>
+                <th>Salesperson</th>
+                <th>Deals</th>
+                <th>Sales</th>
+                <th>Prosectives</th>
+                <th>AOV</th>
             </tr>
         </thead>
         <tbody>
 
         </tbody>
+        <tfoot>
+            <tr>
+                <th>Total</th>
+            </tr>
+        </tfoot>
     </table>
+    <div class="table-data-entry">
+        <div>
+            <h2>Exchange</h2>
+            <input type="file" id="upload-exchange-csv" accept=".csv">
+            <button id="btn-upload-exchange-csv">Read Exchange CSV</button>
+        </div>
+        <div>
+            <h2>Sales</h2>
+            <input type="file" id="upload-sales-csv" accept=".csv">
+            <button id="btn-upload-sales-csv" disabled>Read Sales CSV</button>
+        </div>
+        <form action="" id="date">
+            Start Date: <input type="date" id="start-date">
+            Stop Date: <input type="date" id="stop-date">
+        </form>
+    </div>
+
 
 
 
     <table id="tbl-data"></table>
 
-    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
