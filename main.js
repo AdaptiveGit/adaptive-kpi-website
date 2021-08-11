@@ -35,7 +35,7 @@ function createTableBody() {
 
             //create
             let newElement;
-            var nf = Intl.NumberFormat();
+            let nf = Intl.NumberFormat();
 
             newElement = document.createElement("tr");
             newElement.setAttribute("id", `table-row-${i}`);
@@ -63,6 +63,70 @@ function createTableBody() {
 
             resolve("complete");
         }
+    })
+}
+
+function createTableFoot() {
+    return new Promise((resolve) => {
+
+        // check for existing elements and clear the table before inserting new elements
+        let tableElements = document.querySelector("tfoot");
+        while (tableElements.firstChild) {
+            tableElements.removeChild(tableElements.firstChild);
+        }
+
+        let Row = document.querySelector("tr");
+        let rowElements = Row.children;
+
+        let newElement;
+        let nf = Intl.NumberFormat();
+        let total = 0;
+
+        newElement = document.createElement("tr");
+        newElement.setAttribute("id", `table-foot`);
+        document.querySelector("tfoot").append(newElement);
+
+        newElement = document.createElement("td");
+        newElement.innerText = "Total";
+        document.querySelector(`#table-foot`).append(newElement);
+
+        total = 0;
+        for (let j = 0; j < salesPersonStats.length; j++) {
+            total += salesPersonStats[j].deals;
+        }
+
+        newElement = document.createElement("td");
+        newElement.innerText = nf.format(parseInt(total));
+        document.querySelector(`#table-foot`).append(newElement);
+
+        total = 0;
+        for (let j = 0; j < salesPersonStats.length; j++) {
+            total += salesPersonStats[j].totalSales;
+        }
+
+        newElement = document.createElement("td");
+        newElement.innerText = `£${nf.format(parseInt(total))}`;
+        document.querySelector(`#table-foot`).append(newElement);
+
+        total = 0;
+        for (let j = 0; j < salesPersonStats.length; j++) {
+            total += salesPersonStats[j].prospectiveSales;
+        }
+
+        newElement = document.createElement("td");
+        newElement.innerText = `£${nf.format(parseInt(total))}`;
+        document.querySelector(`#table-foot`).append(newElement);
+
+        total = 0;
+        for (let j = 0; j < salesPersonStats.length; j++) {
+            total += salesPersonStats[j].averageOrderValue;
+        }
+
+        newElement = document.createElement("td");
+        newElement.innerText = `£${nf.format(parseInt(total))}`;
+        document.querySelector(`#table-foot`).append(newElement);
+
+        resolve("complete");
     })
 }
 
@@ -100,6 +164,9 @@ let btnUploadSales = document.getElementById("btn-upload-sales-csv").addEventLis
                 })
                 .then(() => {
                     return createTableBody()
+                })
+                .then(() => {
+                    return createTableFoot()
                 })
         }
     })

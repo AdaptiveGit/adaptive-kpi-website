@@ -30,7 +30,13 @@ body {
 }
 
 .table-data-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-white);
+    width: 100vw;
+    padding: 3rem;
 }
 
 .table-hidden {
@@ -78,26 +84,21 @@ thead, tfoot {
     font-size: 3rem;
     color: var(--color-blue-light);
     text-transform: uppercase;
+
 }
 
 
 
 @media screen and (max-width: 1400px) {
 
-    thead, tfoot {
-        font-size: 2rem;
-    }
-    .table-visible {
-        font-size: 1rem;
+    html {
+        font-size: 10px;
     }
 }
 
 @media screen and (max-width: 900px) {
 
-    thead, tfoot {
-        font-size: 1rem;
-    }
-    .table-visible {
-        font-size: 0.5rem;
+    html {
+        font-size: 5px;
     }
 }
