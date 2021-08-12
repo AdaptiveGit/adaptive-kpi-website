@@ -36,20 +36,28 @@
         </tfoot>
     </table>
     <div class="table-data-entry">
-        <div>
-            <h2>Exchange</h2>
+        <h1 class="table-block">Table Data Entry</h1>
+        <p class="table-block">Please upload your spreadsheet files here for formatting. CSV files only.</p>
+        <h2 class="table-block">Exchange Rate History</h2>
+        <div class="table-block">
             <input type="file" id="upload-exchange-csv" accept=".csv">
             <button id="btn-upload-exchange-csv">Read Exchange CSV</button>
         </div>
-        <div>
-            <h2>Sales</h2>
+        <h2 class="table-block">Sales History</h2>
+        <div class="table-block">
+
             <input type="file" id="upload-sales-csv" accept=".csv">
             <button id="btn-upload-sales-csv" disabled>Read Sales CSV</button>
         </div>
-        <form action="" id="date">
-            Start Date: <input type="date" id="start-date">
-            Stop Date: <input type="date" id="stop-date">
+        <h2 class="table-block">Date Range</h2>
+        <form action="" id="date" class="table-block">
+
+            <label for="start-date">from</label>
+            <input type="date" id="start-date">
+            <label for="stop-date">to</label>
+            <input type="date" id="stop-date">
         </form>
+        <img src="adaptive-logo.jpg" alt="" class="logo">
     </div>
 
 

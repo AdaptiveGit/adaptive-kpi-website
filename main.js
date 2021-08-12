@@ -130,7 +130,6 @@ function createTableFoot() {
     })
 }
 
-
 // parse historical exchange rate data
 let btnUploadExchange = document.getElementById("btn-upload-exchange-csv").addEventListener("click", () => {
     Papa.parse(document.getElementById("upload-exchange-csv").files[0], {

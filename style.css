@@ -1,5 +1,6 @@
 :root {
     --color-black: #28282A;
+    --color-grey: #757585;
     --color-white: #FFFFFF;
     --color-blue-dark: #33387C;
     --color-blue-med: #2990D3;
@@ -87,7 +88,74 @@ thead, tfoot {
 
 }
 
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: var(--color-blue-dark);
+    text-transform: lowercase;
+}
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-blue-med);
+    text-transform: lowercase;
+}
+
+p {
+    font-size: 1rem;
+    margin: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-black);
+}
+
+input {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    
+}
+input[type=file]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type=file]::before, button {
+    content: "Choose File";
+    display: inline-block;
+    background: var(--color-grey);
+    color: var(--color-white);
+    border: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+input[type=file]:hover::before, button:hover {
+    background: var(--color-blue-dark);
+}
+
+input[type=file]:disabled:before, button:disabled {
+    background: var(--color-blue-light);
+}
+
+.logo {
+    width: 25%;
+    height: auto;
+    margin-top: 3rem;
+}
+
+.table-block {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
 
 @media screen and (max-width: 1400px) {
 
